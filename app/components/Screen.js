@@ -1,24 +1,14 @@
-import { View, StyleSheet, StatusBar } from 'react-native'
-import SearchBar from './SearchBar'
-import BlockCard from './BlockCard'
-import FeaturedNews from './FeaturedNews'
-import SmallCard from './SmallCard'
+import { View, StyleSheet, StatusBar, Text, ScrollView } from "react-native";
 
-export default function Screen() {
-  return (
-    <View style={styles.container}>
-      <SearchBar />      
-      <FeaturedNews />
-      <SmallCard />
-    </View>
-  )
+export default function Screen({ children }) {
+  return <ScrollView style={styles.container}>{children}</ScrollView>;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: StatusBar.currentHeight,
-    backgroundColor: '#f5f5f5'
-  }
-})
-
+    backgroundColor: "#f7f3f3",
+    paddingHorizontal: 15,
+  },
+});
